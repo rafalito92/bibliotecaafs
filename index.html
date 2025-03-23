@@ -45,54 +45,18 @@
             max-width: 100%; /* Limita a largura do título */
         }
 
-        /* Ajustes para telas menores */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: row; /* Mantém os logotipos lado a lado */
-                align-items: flex-start; /* Alinha os logotipos no topo */
-                padding: 10px;
-            }
-
-            .header .logo img {
-                height: 40px; /* Reduz o tamanho das imagens */
-            }
-
-            .header .title {
-                font-size: 18px; /* Reduz o tamanho da fonte do título */
-                margin: 10px 0; /* Adiciona espaço acima e abaixo do título */
-                width: 100%; /* Ocupa a largura total */
-                text-align: center; /* Centraliza o título */
-                order: 1; /* Coloca o título abaixo dos logotipos */
-            }
-
-            .header .logo:first-child {
-                margin-right: auto; /* Logotipo da biblioteca à esquerda */
-            }
-
-            .header .logo:last-child {
-                margin-left: auto; /* Logotipo da escola à direita */
-            }
-        }
-
         /* Barra de pesquisa fixa */
         .search-container {
             position: fixed;
-            top: 60px; /* Ajuste inicial para telas maiores */
+            top: 70px; /* Posição fixa para desktop */
             left: 0;
             right: 0;
-            background-color: #e0f7e0; /* Verde claro */
+            background-color: #2e7d32; /* Verde escuro para combinar com a .header */
             padding: 10px 0;
             z-index: 1000; /* Garante que fique acima dos outros elementos */
             display: flex;
             justify-content: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Ajuste da posição da barra de pesquisa em telas menores */
-        @media (max-width: 768px) {
-            .search-container {
-                top: 150px; /* Ajuste para telas menores */
-            }
         }
 
         #search-input {
@@ -111,14 +75,7 @@
         /* Container principal */
         .container {
             padding: 20px;
-            margin-top: 160px; /* Espaço para a barra verde e a barra de pesquisa fixas */
-        }
-
-        /* Ajuste do margin-top do container em telas menores */
-        @media (max-width: 768px) {
-            .container {
-                margin-top: 200px; /* Ajuste para telas menores */
-            }
+            margin-top: 130px; /* Espaço para a barra verde e a barra de pesquisa fixas */
         }
 
         /* Cards de livros */
@@ -155,6 +112,45 @@
 
         .book-card p strong {
             color: #555;
+        }
+
+        /* Ajustes para telas menores (mobile) */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: row; /* Mantém os logotipos lado a lado */
+                align-items: flex-start; /* Alinha os logotipos no topo */
+                padding: 10px;
+            }
+
+            .header .logo img {
+                height: 40px; /* Reduz o tamanho das imagens */
+            }
+
+            .header .title {
+                font-size: 18px; /* Reduz o tamanho da fonte do título */
+                margin: 10px 0; /* Adiciona espaço acima e abaixo do título */
+                width: 100%; /* Ocupa a largura total */
+                text-align: center; /* Centraliza o título */
+                order: 1; /* Coloca o título abaixo dos logotipos */
+            }
+
+            .header .logo:first-child {
+                margin-right: auto; /* Logotipo da biblioteca à esquerda */
+            }
+
+            .header .logo:last-child {
+                margin-left: auto; /* Logotipo da escola à direita */
+            }
+
+            /* Ajuste da barra de pesquisa para mobile */
+            .search-container {
+                top: 60px; /* Ajuste para ficar colada à .header */
+            }
+
+            /* Ajuste do container principal para mobile */
+            .container {
+                margin-top: 140px; /* Ajuste para evitar sobreposição */
+            }
         }
     </style>
 </head>
