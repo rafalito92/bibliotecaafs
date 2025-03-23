@@ -27,11 +27,11 @@
             align-items: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 1000; /* Garante que fique acima dos outros elementos */
+            flex-wrap: wrap; /* Permite quebra de linha */
         }
 
         .header .logo img {
-            vertical-align: middle; /* Alinha as imagens verticalmente */
-            height: 50px; /* Ajuste o tamanho das imagens */
+            height: 50px; /* Tamanho padrão das imagens */
         }
 
         .header .title {
@@ -39,12 +39,16 @@
             font-weight: bold;
             color: white;
             text-transform: uppercase;
+            white-space: nowrap; /* Impede a quebra de linha */
+            overflow: hidden; /* Esconde o texto que ultrapassar */
+            text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
+            max-width: 100%; /* Limita a largura do título */
         }
 
         /* Barra de pesquisa fixa */
         .search-container {
             position: fixed;
-            top: 70px; /* Ajuste para colar logo abaixo da barra verde */
+            top: 70px; /* Posição fixa para desktop */
             left: 0;
             right: 0;
             background-color: #e0f7e0; /* Verde claro */
@@ -53,6 +57,13 @@
             display: flex;
             justify-content: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Ajuste para colar a barra de pesquisa à faixa verde */
+        @media (max-width: 768px) {
+            .search-container {
+                top: 60px; /* Ajuste para ficar colada à .header */
+            }
         }
 
         #search-input {
@@ -72,6 +83,13 @@
         .container {
             padding: 20px;
             margin-top: 130px; /* Espaço para a barra verde e a barra de pesquisa fixas */
+        }
+
+        /* Ajuste do margin-top do container em telas menores */
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 140px; /* Ajuste para evitar sobreposição */
+            }
         }
 
         /* Cards de livros */
