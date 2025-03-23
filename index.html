@@ -45,10 +45,39 @@
             max-width: 100%; /* Limita a largura do título */
         }
 
+        /* Ajustes para telas menores */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: row; /* Mantém os logotipos lado a lado */
+                align-items: flex-start; /* Alinha os logotipos no topo */
+                padding: 10px;
+            }
+
+            .header .logo img {
+                height: 40px; /* Reduz o tamanho das imagens */
+            }
+
+            .header .title {
+                font-size: 18px; /* Reduz o tamanho da fonte do título */
+                margin: 10px 0; /* Adiciona espaço acima e abaixo do título */
+                width: 100%; /* Ocupa a largura total */
+                text-align: center; /* Centraliza o título */
+                order: 1; /* Coloca o título abaixo dos logotipos */
+            }
+
+            .header .logo:first-child {
+                margin-right: auto; /* Logotipo da biblioteca à esquerda */
+            }
+
+            .header .logo:last-child {
+                margin-left: auto; /* Logotipo da escola à direita */
+            }
+        }
+
         /* Barra de pesquisa fixa */
         .search-container {
             position: fixed;
-            top: 70px; /* Posição fixa para desktop */
+            top: 80px; /* Ajuste inicial para telas maiores */
             left: 0;
             right: 0;
             background-color: #e0f7e0; /* Verde claro */
@@ -59,10 +88,10 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Ajuste para colar a barra de pesquisa à faixa verde */
+        /* Ajuste da posição da barra de pesquisa em telas menores */
         @media (max-width: 768px) {
             .search-container {
-                top: 100px; /* Ajuste para ficar colada à .header */
+                top: 140px; /* Ajuste para telas menores */
             }
         }
 
@@ -82,13 +111,13 @@
         /* Container principal */
         .container {
             padding: 20px;
-            margin-top: 130px; /* Espaço para a barra verde e a barra de pesquisa fixas */
+            margin-top: 160px; /* Espaço para a barra verde e a barra de pesquisa fixas */
         }
 
         /* Ajuste do margin-top do container em telas menores */
         @media (max-width: 768px) {
             .container {
-                margin-top: 140px; /* Ajuste para evitar sobreposição */
+                margin-top: 200px; /* Ajuste para telas menores */
             }
         }
 
