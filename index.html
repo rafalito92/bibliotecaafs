@@ -59,6 +59,13 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
+        /* Ajuste para colar a barra de pesquisa à faixa verde */
+        @media (max-width: 768px) {
+            .search-container {
+                top: 60px; /* Ajuste para ficar colada à .header */
+            }
+        }
+
         #search-input {
             width: 60%;
             padding: 10px;
@@ -76,6 +83,13 @@
         .container {
             padding: 20px;
             margin-top: 130px; /* Espaço para a barra verde e a barra de pesquisa fixas */
+        }
+
+        /* Ajuste do margin-top do container em telas menores */
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 140px; /* Ajuste para evitar sobreposição */
+            }
         }
 
         /* Cards de livros */
@@ -112,45 +126,6 @@
 
         .book-card p strong {
             color: #555;
-        }
-
-        /* Ajustes para telas menores (mobile) */
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: row; /* Mantém os logotipos lado a lado */
-                align-items: flex-start; /* Alinha os logotipos no topo */
-                padding: 10px;
-            }
-
-            .header .logo img {
-                height: 40px; /* Reduz o tamanho das imagens */
-            }
-
-            .header .title {
-                font-size: 18px; /* Reduz o tamanho da fonte do título */
-                margin: 10px 0; /* Adiciona espaço acima e abaixo do título */
-                width: 100%; /* Ocupa a largura total */
-                text-align: center; /* Centraliza o título */
-                order: 1; /* Coloca o título abaixo dos logotipos */
-            }
-
-            .header .logo:first-child {
-                margin-right: auto; /* Logotipo da biblioteca à esquerda */
-            }
-
-            .header .logo:last-child {
-                margin-left: auto; /* Logotipo da escola à direita */
-            }
-
-            /* Ajuste da barra de pesquisa para mobile */
-            .search-container {
-                top: 120px; /* Ajuste para ficar logo abaixo da .header */
-            }
-
-            /* Ajuste do container principal para mobile */
-            .container {
-                margin-top: 180px; /* Ajuste para evitar sobreposição */
-            }
         }
     </style>
 </head>
